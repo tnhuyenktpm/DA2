@@ -50,13 +50,14 @@ nav>ul>li>a:hover{
 }
 nav>ul{
 	padding-left: 50px;
+	padding-top: 5px;
 	margin:0px;
 	list-style:none;
 	border-style: solid;
 	border-color: #d1d8e0;
 	border-radius:4px;
 	background-color:#006266;
-	font-size: 20px;
+	font-size: 16px;
 
 	} 		
 nav ul ul{
@@ -69,13 +70,13 @@ nav ul ul{
 	}
 nav ul ul a{
 	display:block;
-	font-size: 16px;
-	line-height:30px;
+	font-size: 14px;
+	line-height: 20px;
 	background-color:#006266;
 	color:white;
 	font-weight:bold;
 	text-decoration:none;
-	padding:10px 20px;}
+	padding:5px 10px;}
 	  	
 nav > ul > li:hover>ul{
 	display:block;
