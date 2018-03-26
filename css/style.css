@@ -1,0 +1,85 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background-image:url(image/br.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	font-family:"Times New Roman", Times, serif;
+}
+#menu{
+	width:960px;
+	margin:0 auto;
+}
+header{
+	position:relative;
+}
+.menu{
+	position:absolute;
+	top:20px;
+	right:15px;
+}
+.menu a{
+	text-decoration: none;
+	color: #555555;
+}
+
+div.logo{
+	display: block;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+
+nav>ul>li{
+	display:inline-block;
+	position:relative;
+	}
+	
+nav>ul>li>a{
+	display:block;
+	text-decoration:none;
+	padding: 0 15px;
+	line-height:50px;
+	color:white;
+	font-weight:bold;
+	}
+nav>ul>li>a:hover{
+	color:#FF0;
+}
+nav>ul{
+	padding-left: 50px;
+	margin:0px;
+	list-style:none;
+	border-style: solid;
+	border-color: #d1d8e0;
+	border-radius:4px;
+	background-color:#006266;
+	font-size: 20px;
+
+	} 		
+nav ul ul{
+	position:absolute;
+	display:none;
+	padding:0px;
+	margin:0px;
+	list-style:none;
+	width:250px;
+	}
+nav ul ul a{
+	display:block;
+	font-size: 16px;
+	line-height:30px;
+	background-color:#006266;
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+	padding:10px 20px;}
+	  	
+nav > ul > li:hover>ul{
+	display:block;
+}	
+nav ul ul a:hover{
+	color:#FF0;
+}
