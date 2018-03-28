@@ -7,10 +7,12 @@ body{
 	background-repeat:no-repeat;
 	background-size:100% 100%;
 	font-family:"Times New Roman", Times, serif;
+	background-color:#F7F7F7;
 }
 #menu{
 	width:960px;
 	margin:0 auto;
+	background-color:#FFF;
 }
 header{
 	position:relative;
@@ -30,57 +32,79 @@ div.logo{
     padding-top: 20px;
     padding-left: 50px;
 }
-
-
-nav>ul>li{
-	display:inline-block;
-	position:relative;
+#nav ul{
+	list-style-type:none;
+	background-color:#006266;
 	}
-	
-nav>ul>li>a{
-	display:block;
-	text-decoration:none;
-	padding: 0 15px;
+#nav ul li {
+	color:#d1d8e0;
+	display:inline-table;
+	width:200px;
+	height:50px;
 	line-height:50px;
-	color:white;
-	font-weight:bold;
-	}
-nav>ul>li>a:hover{
-	color:#FF0;
+	position:relative;
 }
-nav>ul{
-	padding-left: 50px;
-	padding-top: 5px;
-	margin:0px;
-	list-style:none;
-	border-style: solid;
-	border-color: #d1d8e0;
-	border-radius:4px;
-	background-color:#006266;
-	font-size: 16px;
-
-	} 		
-nav ul ul{
-	position:absolute;
-	display:none;
-	padding:0px;
-	margin:0px;
-	list-style:none;
-	width:250px;
-	}
-nav ul ul a{
-	display:block;
-	font-size: 14px;
-	line-height: 20px;
-	background-color:#006266;
-	color:white;
-	font-weight:bold;
+#nav ul li a
+{ 
+	text-align:center;
+	color:#FFF;
 	text-decoration:none;
-	padding:5px 10px;}
-	  	
-nav > ul > li:hover>ul{
 	display:block;
-}	
-nav ul ul a:hover{
-	color:#FF0;
+	margin:0px;
+	font-size:20px;
+	font-family:"Times New Roman", Times, serif;
+	font-weight:bold;
+	}
+#nav ul li a:hover{
+	background-color:#077;
+	color:#FFF;
 }
+#nav ul li > .sub-nav{
+	display:none;
+	position:absolute;
+}
+#nav ul li:hover .sub-nav{
+	display:block;
+}
+#content 
+{
+	margin:20px;
+	padding:20px;
+	}
+.CVcapnhat{
+	height:375px;
+	border:1px solid #F93;
+}
+.CVcapnhat table tr td a {
+	text-decoration:none;
+	color:#333;
+	}
+.CV{
+	background:#F93;
+	width: 220px;
+	height: 40px;
+	margin:0;
+	border-radius: 20px 0;
+	
+}
+.CV p{
+	color: aliceblue;
+	font-weight: bold;
+	padding-top:5px;
+	padding-left: 20px;
+	font-size:20px;
+}
+footer
+{
+	background-color:#006266;
+	height:80px;}
+footer > p 
+{
+	text-align:center;
+	padding:30px;
+	font-size:18px;
+	font-family:"Times New Roman", Times, serif;
+	color:white;
+	font-weight:bold;
+	
+	}
