@@ -11,6 +11,8 @@
 <title>Trang chủ</title>
 <link href="../bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../jquery/jquery-3.3.1.slim.min">
+<link rel="stylesheet" type="text/css" href="../jquery/popper.min">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -18,25 +20,30 @@
 	 <div id="menu">
       	<header>
         	<div class="logo">
-        		<a href="#"><img src="../image/logo-cv-cntt.png" height="100px"/></a>
+        		<a href="home.php"><img src="../image/logo-cv-cntt.png" height="100px"/></a>
         	</div>
         	<div class="menu">
-          		<a href="#">Đăng Ký</a> | 
-          		<a href="#">Đăng Nhập</a>
+          		<a href="formsCV.php">Đăng Ký</a> | 
+          		<a href="login.php">Đăng Nhập</a>
         	</div>
       </header>
 	 <div id="nav">
         <ul>
           <li>
-            <a href="#">
+            <a href="home.php">
               <i class="fa fa-home" style="font-size:25px"></i>
              HOME</a>
           </li>
           <li><a href="#">CHUYÊN NGÀNH</a>
     	     <ul class="sub-nav">
-    	       <li><a href="#">Kỹ thuật phần mềm</a></li>
-              <li><a href="#">Khoa học máy tính</a></li>
-              <li><a href="#">Hệ thống thông tin</a></li>
+             <?php
+      $query = "SELECT * from chuyen_nghanh ";
+    $result = mysqli_query($connect,$query);
+      while ($row =mysqli_fetch_assoc($result)){
+            echo "<li><a href='danhmuccv.php?dm=$row[id_dmuc]'>$row[ten_chuyen_nghanh]</a>";
+            echo '</li>';
+          }
+              ?>
            </ul>
           </li>
         </ul>
@@ -49,21 +56,24 @@
     	<table class="table table-hover">
   		<tbody>
          <?php
-	  	$query = "SELECT * from thong_tin_cv, chuyen_nghanh where chuyen_nghanh.ma_chuyen_nghanh = thong_tin_cv.ma_chuyen_nghanh";
-		$result = mysqli_query($connect,$query);
-		if(mysqli_num_rows($result)>0){
-			while ($row =mysqli_fetch_assoc($result)){
-				$ho_ten =$row['ho_ten'];
-				$ten_chuyen_nghanh=$row['ten_chuyen_nghanh'];
-    	echo "<tr>";
-        	echo "<td></td>";
-      		echo "<td><br><br>$ho_ten</td>";
-      		echo "<td><br><br>$ten_chuyen_nghanh</td>";
-			}
-		}
-	  ?>
+      $query = "SELECT * from thong_tin_cv, chuyen_nghanh  where chuyen_nghanh.ma_chuyen_nghanh = thong_tin_cv.ma_chuyen_nghanh ";
+    $result = mysqli_query($connect,$query);
+    if(mysqli_num_rows($result)>0){
+      while ($row =mysqli_fetch_assoc($result)){
+          $hinh_anh = $row['hinh_anh'];
+         $ho_ten =$row['ho_ten'];
+        $ten_chuyen_nghanh=$row['ten_chuyen_nghanh'];
+      echo "<tr>";
+        echo "<td></td>";
+        echo "<td><a href='../ThongtinCV.php?id=$row[id]'><img width='100px' height='100px' src='../{$hinh_anh}'' alt='Hình ảnh' align='middle' class='rounded-circle'></a></td>";
+        echo "<td><a href='../ThongtinCV.php?id=$row[id]'><br><br>$ho_ten</a></td>";
+        echo "<td><a href='../ThongtinCV.php?id=$row[id]'><br><br>$ten_chuyen_nghanh</a></td>";
+      }
+    }
+    ?>
       </tbody>
 		</table>
+      
       </div>
      </div>
      <footer>

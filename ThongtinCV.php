@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <!-- saved from url=(0035)http://104.131.177.38/demo/wp/iamx/ -->
 <?php
 		$connect = mysqli_connect("localhost", "root", "", "doan_2") or die("không thể kết nối được");
 		mysqli_query($connect,'SET NAMES UTF8');
+		$id=$_GET["id"];
 	?>
 <html lang="en-US" class="wf-roboto-i9-active wf-roboto-n9-active wf-roboto-i5-active wf-roboto-i7-active wf-roboto-i1-active wf-roboto-i3-active wf-roboto-i4-active wf-roboto-n1-active wf-roboto-n3-active wf-roboto-n4-active wf-roboto-n5-active wf-roboto-n7-active wf-active js csstransforms csstransforms3d csstransitions js_active  vc_mobile  vc_transform  vc_transform skrollr skrollr-desktop" style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link type="text/css" rel="stylesheet" href="./Iamx _files/css/css"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}
 </style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
@@ -12,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="http://104.131.177.38/demo/wp/iamx/xmlrpc.php">
-    <title>Iamx – Creative Personal Resume WordPress Theme</title>
+    <title>Thong tin CV</title>
                         <script src="./Iamx _files/js/webfont.js.tải xuống" type="text/javascript" async></script><script>
                             /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
                             if ( typeof WebFontConfig === "undefined" ) {
@@ -221,7 +223,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
 
 					<div class="intro-sub">
                     <?php
-					$query = "select ho_ten from thong_tin_cv where ma_cv= 'CV01' ";
+					$query = "select ho_ten from thong_tin_cv where id='$id' ";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result)>0){
 					$i =0;
@@ -233,10 +235,9 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
 		            }  
 					?>
                     </div>
-		
 					<h1>
 					<?php
-					$query = "select * from thong_tin_cv, chuyen_nghanh where chuyen_nghanh.ma_chuyen_nghanh = thong_tin_cv.ma_chuyen_nghanh and ma_cv= 'CV01'";
+					$query = "select * from thong_tin_cv, chuyen_nghanh where chuyen_nghanh.ma_chuyen_nghanh = thong_tin_cv.ma_chuyen_nghanh and id='$id'";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result)>0){
 					$i =0;
@@ -250,7 +251,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
 				
 		<div class="intro-description">
 					<?php
-					$query = "select * from thong_tin_cv where ma_cv= 'CV01' ";
+					$query = "select * from thong_tin_cv where id='$id' ";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result)>0){
 					$i =0;
@@ -283,7 +284,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
 
                 <div class="main-menu-wrapper hidden-xs clearfix">
                     <div class="main-menu">                   
-                        <ul id="menu-primary-menu" class="menu nav navbar-nav navbar-right"><li id="menu-item-3549" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3549  has-menu-child active"><a title="Home" href="#home">Home</a></li>
+                        <ul id="menu-primary-menu" class="menu nav navbar-nav navbar-right"><li id="menu-item-3549" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3549  has-menu-child active"><a title="Home" href="PHP/home.php">Home</a></li>
 <li id="menu-item-3550" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3550  has-menu-child"><a title="About" href="#about">Giới thiệu</a></li>
 </ul>                    </div>
                 </div> <!-- /navbar-collapse -->
@@ -291,7 +292,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="visible-xs">
                     <div class="mobile-menu collapse navbar-collapse mobile-toggle">
-                        <ul id="menu-primary-menu-1" class="menu nav navbar-nav"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3549  has-menu-child active"><a title="Home" href="http://104.131.177.38/demo/wp/iamx/#home">Home</a></li>
+                        <ul id="menu-primary-menu-1" class="menu nav navbar-nav"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3549  has-menu-child active"><a title="Home" href="PHP/home.php">Home</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3550  has-menu-child"><a title="About" href="http://104.131.177.38/demo/wp/iamx/#about">Giới Thiệu</a></li>
 
 </ul>                    </div> <!-- /.navbar-collapse -->
@@ -318,7 +319,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
     <div class="biography">
         <div class="myphoto">
                         <?php
-								$query = "select hinh_anh from thong_tin_cv  where ma_cv= 'CV01' ";
+								$query = "select hinh_anh from thong_tin_cv  where id='$id' ";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result)>0){
 								while ($row =mysqli_fetch_assoc($result)){
@@ -330,10 +331,9 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
             <div class="img-frame"></div>
         </div>
         <ul>
-            
                             <li><strong>Tên:&nbsp;</strong>
                              <?php
-								$query = "select ho_ten from thong_tin_cv where ma_cv= 'CV01' ";
+								$query = "select ho_ten from thong_tin_cv where id='$id' ";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result)>0){
 								$i =0;
@@ -346,7 +346,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
 							?></li>
                             <li><strong>Ngày sinh:&nbsp;</strong>
                             <?php
-								$query = "select * from thong_tin_cv where ma_cv= 'CV01'";
+								$query = "select * from thong_tin_cv where id='$id'";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result)>0){
 								$i =0;
@@ -360,7 +360,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
                             </li>
                             <li><strong>Địa chỉ:&nbsp;</strong>
                             <?php
-								$query = "select * from thong_tin_cv where ma_cv= 'CV01'";
+								$query = "select * from thong_tin_cv where id='$id'";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result)>0){
 								$i =0;
@@ -374,7 +374,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
                             </li>
                             <li><strong>Quốc tịch:&nbsp;</strong>
                             <?php
-								$query = "select * from thong_tin_cv where ma_cv= 'CV01'";
+								$query = "select * from thong_tin_cv where id='$id'";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result)>0){
 								$i =0;
@@ -388,7 +388,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
                             </li>
                             <li><strong>Phone:&nbsp;</strong> 
                             <?php
-								$query = "select * from thong_tin_cv where ma_cv= 'CV01'";
+								$query = "select * from thong_tin_cv where id='$id'";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result)>0){
 								$i =0;
@@ -402,7 +402,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
                             </li>
                             <li><strong>Email:&nbsp;</strong>
                             <?php
-								$query = "select * from thong_tin_cv where ma_cv= 'CV01'";
+								$query = "select * from thong_tin_cv where id='$id'";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result)>0){
 								$i =0;
@@ -423,7 +423,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
 <h3>Mục tiêu</h3>
 <p>
 				<?php
-					$query = "select * from thong_tin_cv where ma_cv= 'CV01'";
+					$query = "select * from thong_tin_cv where id='$id'";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result)>0){
 					$i =0;
@@ -440,7 +440,7 @@ var zilla_likes = {"ajaxurl":"http:\/\/104.131.177.38\/demo\/wp\/iamx\/wp-admin\
 <h3>Những gì tôi làm ?</h3>
 <p>
 				<?php
-					$query = "select * from thong_tin_cv where ma_cv= 'CV01'";
+					$query = "select * from thong_tin_cv where id='$id'";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result)>0){
 					$i =0;
